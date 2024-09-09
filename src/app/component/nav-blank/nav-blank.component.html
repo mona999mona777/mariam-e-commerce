@@ -1,0 +1,136 @@
+<nav
+  class="navbar navbar-expand-lg shadow position-fixed w-100 bg-info-subtle z-3"
+>
+  <div class="container">
+    <a class="navbar-brand text-main" routerLink="home"
+      >{{ "navbar.DIOR" | translate }}
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="home"
+            >{{ "navbar.Home" | translate }}</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="product"
+            >{{ "navbar.Products" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="catergories"
+            >{{ "navbar.Categories" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active-link"
+            routerLink="brands"
+            >{{ "navbar.Brands" | translate }}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link position-relative px-3"
+            routerLinkActive="active-link"
+            routerLink="wishlist"
+            >{{ "navbar.Wishlist" | translate }}
+            <i class="fa-solid fa-heart fa-2xl fs-5" style="color: #db0f2e"></i>
+            <span class="badge position-absolute top-0 end-0 bg-success">{{
+              count
+            }}</span></a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "navbar.Lang" | translate }}
+          </a>
+          <ul class="dropdown-menu">
+            <li
+              (click)="change('en')"
+              [class.bg-danger]="_TranslateService.currentLang == 'en'"
+            >
+              <a class="dropdown-item cr">EN</a>
+            </li>
+            <li
+              (click)="change('ar')"
+              [class.bg-danger]="_TranslateService.currentLang == 'ar'"
+            >
+              <a class="dropdown-item cr">AR</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link position-relative"
+            routerLinkActive="active-link"
+            routerLink="cart"
+          >
+            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+            <span class="badge position-absolute top-0 start-0 bg-danger">{{
+              cartnumber
+            }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"> <i class="fa-brands fa-youtube"></i></a>
+        </li>
+        <li class="nav-item cr">
+          <a
+            class="nav-link text-decoration-underline"
+            (click)="_AuthService.logout()"
+            >{{ "navbar.SignOut" | translate }}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

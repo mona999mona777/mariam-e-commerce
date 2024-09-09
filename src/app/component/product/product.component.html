@@ -1,0 +1,55 @@
+@if (productData) {
+<section class="container-fluid my-5 py-5 shadow">
+  <h1 class="text-main text-decoration-underline h2 ms-5">ALL product</h1>
+  <div class="row g-3">
+    @for (item of productData; track item._id) {
+    <div [routerLink]="['/details', item._id]" class="col-3">
+      <div
+        class="h-100 product border bg-sec border-3 border-info-subtle shadow rounded-5 h-100"
+      >
+        <div class="row h-100 bg-sec p-3">
+          <div class="col-6 col-md-4">
+            <owl-carousel-o [options]="theProductData">
+              @for (image of item.images; track $index) {
+              <ng-template carouselSlide>
+                <img
+                  class="w-100 rounded-4 product"
+                  src="{{ image }}"
+                  alt="{{ item.title }}"
+                />
+              </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+
+          <div class="col-6 col-md-8">
+            <h3 class="h6 text-info-emphasis">
+              Category : {{ item.category.name }}
+            </h3>
+            <h3 class="h6 text-info-emphasis">
+              Brand Name: {{ item.brand.name }}
+            </h3>
+            <h3 class="h4 text-main">
+              {{ item.title.split(" ", 3).join(" ") }}
+            </h3>
+            <p class="text-light p-0 mb-0">
+              {{ item.description.split(" ", 5).join(" ") }}.......
+            </p>
+          </div>
+          <div
+            class="col-12 d-flex align-items-center justify-content-between px-3 py-0 mt-0"
+          >
+            <p>Price : {{ item.price }} EGP</p>
+            <p>
+              <i class="fa-solid fa-star rating-color"></i>
+              {{ item.ratingsAverage }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+
+}

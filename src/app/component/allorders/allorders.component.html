@@ -1,0 +1,42 @@
+<section class="container w-75 mx-auto shadow my-5 p-5">
+  <h1 class="h2 text-main text-decoration-underline">All Orders Info:</h1>
+
+  @for (order of alloreders; track order._id) {
+  <div
+    class="row product bg-success-subtle my-3 align-items-center justify-content-center py-3"
+  >
+    @for (item of order.cartItems; track $index) {
+
+    <div class="row py-2">
+      <div class="col-6 col-md-2">
+        <img
+          src="{{ item.product.imageCover }}"
+          width="100px"
+          alt="{{ item.product.title }}"
+        />
+      </div>
+      <div class="col-6 col-md-4">
+        <p>productName : {{ item.product.title }}</p>
+        <p>count : {{ item.count }}</p>
+        <p>price : {{ item.price }}</p>
+      </div>
+    </div>
+
+    }
+    <div class="row mt-3 bg-info-subtle py-3">
+      <div class="col-6">
+        <P>User Email: {{ order.user.email }}</P>
+        <P>User order phone: {{ order.shippingAddress.phone }}</P>
+        <P>User city: {{ order.shippingAddress.city }}</P>
+        <P>date: {{ order.paidAt }}</P>
+      </div>
+      <div class="col-6">
+        <P>payment status: {{ order.isPaid }}</P>
+        <P>Is Delivered: {{ order.isDelivered }}</P>
+        <P>Order Id: {{ order.id }}</P>
+        <P>Payment Method : {{ order.paymentMethodType }}</P>
+      </div>
+    </div>
+  </div>
+  }
+</section>

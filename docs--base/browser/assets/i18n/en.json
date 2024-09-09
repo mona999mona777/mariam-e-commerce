@@ -1,0 +1,15 @@
+{
+  "navbar":{
+    "DIOR":"DIOR",
+    "Home":"Home" ,
+    "Brands":"Brands",
+    "Products":"Product",
+    "Categories":"Categories",
+    "SignOut":"SignOut",
+    "Wishlist":"WishList",
+    "Lang":"Lang"
+  },
+  "home":{
+
+  }
+}

@@ -1,0 +1,24 @@
+@if (brandsData) {
+<section class="container-fluid py-5 my-5 shadow">
+  <h1 class="text-main text-decoration-underline h2 my-3 ms-3">All Brands</h1>
+  <div class="row g-3">
+    @for (category of brandsData; track category._id) {
+
+    <div class="col-md-2">
+      <div
+        class="border bg-sec border-3 border-info-subtle shadow rounded-5 h-100 block"
+      >
+        <img
+          class="w-100 h-75 rounded-5 image"
+          src="{{ category.image }}"
+          alt="{{ category.name }}"
+        />
+        <h3 class="text-center h4 text-main">
+          {{ category.name }}
+        </h3>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+}

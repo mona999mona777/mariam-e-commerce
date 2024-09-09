@@ -1,0 +1,12 @@
+<section class="container-fluid mx-auto my-5">
+  <div class="row g-3 p-5">
+    @for (cat of onCtaegoryData; track $index) {
+    <div class="col-md-6">
+      <div class="product item bg-sec">
+        <h3 class="text-center text-light py-5">{{ cat.name }}</h3>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+<!-- [routerLink]="['/category', category._id]" -->

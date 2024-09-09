@@ -1,0 +1,78 @@
+<section class="bg-custome shadow p-3 my-2 rounded-4">
+  <h1 class="h2 text-main text-decoration-underline">login Now</h1>
+  <form [formGroup]="login" (ngSubmit)="loginfunction()">
+    <div class="my-2">
+      <label for="email">email</label>
+      <input
+        [ngClass]="{ 
+            'is-valid':!login.get('email')?.errors && (login.get('email')?.touched ||
+            login.get('email')?.dirty),
+            'is-invalid':login.get('email')?.errors && (login.get('email')?.touched ||
+            login.get('email')?.dirty),
+         }"
+        id="email"
+        type="email"
+        class="form-control"
+        formControlName="email"
+      />
+      @if (login.get('email')?.errors && (login.get('email')?.touched ||
+      login.get('email')?.dirty)) {
+      <div class="alert alert-danger">
+        @if (login.get('email')?.getError('required')) {
+        <p class="m-0">email is required.</p>
+        } @else if (login.get('email')?.getError('email')) {
+        <p class="m-0">enter valid email.</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="my-2">
+      <label for="password">password</label>
+      <input
+        [ngClass]="{ 
+        'is-valid':!login.get('password')?.errors && (login.get('password')?.touched ||
+        login.get('password')?.dirty),
+        'is-invalid':login.get('password')?.errors && (login.get('password')?.touched ||
+        login.get('password')?.dirty),
+     }"
+        id="password"
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
+      @if (login.get('password')?.errors && (login.get('password')?.touched ||
+      login.get('password')?.dirty)) {
+      <div class="alert alert-danger">
+        @if (login.get('password')?.getError('required')) {
+        <p class="m-0">password is required.</p>
+        } @else if (login.get('password')?.getError('pattern')) {
+        <p class="m-0">enter valid password.</p>
+        }
+      </div>
+      }
+    </div>
+    <button class="btn-main ms-auto d-block" type="submit">
+      login @if (isloading) { <span class="fas fa-spin fa-spinner"></span>}
+    </button>
+
+    <p class="text-center">
+      <a class="text-primary text-decoration-underline" routerLink="/forget"
+        >forgetpasswoed?</a
+      >
+      <!-- Don’t have an account?
+      <a class="link-primary" routerLink="/register"
+        >create account</a
+      > -->
+    </p>
+
+    @if (messgerror) {
+    <p class="text-center alert alert-danger w-50 mx-auto">
+      {{ messgerror }}
+    </p>
+    } @if (messsuccess) {
+    <p class="text-center alert alert-success w-50 mx-auto">
+      {{ messsuccess }}
+    </p>
+    }
+  </form>
+</section>
