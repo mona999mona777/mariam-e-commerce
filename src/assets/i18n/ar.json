@@ -1,130 +1,131 @@
 {
-    "navbar":{
-      "Shopping":"متجر التسوق",
-      "Home":"الرئيسية" ,
-      "Brands":"العلامات التجارية",
-      "Products":"المنتجات ",
-      "Categories":"الاقسام",
-      "SignOut":"تسجيل الخروج",
-      "Wishlist":" قائمة الامنيات ",
-      "Lang":"اللغة",
-      "Login":"تسجيل الدخول",
-      "Register":"إنشاء حساب",
-      "English":"الإنجليزية",
-      "Arabic":"العربية"
-    },
-    "home":{
-      "Winter Collection 2025":"مجموعة شتاء ٢٠٢٥ ",
-      "Men's Collectiom 2025":"مجموعة الرجال ٢٠٢٥ ",
-      "Women's Collectiom 2025":"مجموعة النساء ٢٠٢٥ ",
-      "Recommended for you":"نرشح لك ",
-      "Best Seller":"الأكثر مبيعاّّ ",
-      "Electronics":"الإلكترونيات"
-    },
-    "product":{
-      "ALL products":" المنتجات",
-      "Search by product name":"اسم المنتج"
-    },
-    "cates":{
-      "All Categories":"الأقسام"
-    },
-    "brands":{
-      "All Brands":"العلامات التجارية"
-    },
-    "cart":{
-      "Shope Cart":"عربة التسوق",
-      "totat Cart Price":"إجمالي السعر",
-      "EGP":"جنية",
-      "Clear All Cart":"حذف الكل",
-      "Remove":"إزاله",
-      "Online Pay":"دفع اونلاين",
-      "Cash Pay":"دفع كاش"
-    },
-    "wish":{
-    "Wish List":"المفضلة",
+  "navbar":{
+    "Shopping":"متجر التسوق",
+    "Home":"الرئيسية" ,
+    "Brands":"العلامات التجارية",
+    "Products":"المنتجات ",
+    "Categories":"الاقسام",
+    "SignOut":"تسجيل الخروج",
+    "Wishlist":" قائمة الامنيات ",
+    "Lang":"اللغة",
+    "Login":"تسجيل الدخول",
+    "Register":"إنشاء حساب",
+    "English":"الإنجليزية",
+    "Arabic":"العربية"
+  },
+  "home":{
+    "Winter Collection 2025":"مجموعة شتاء ٢٠٢٥ ",
+    "Men's Collectiom 2025":"مجموعة الرجال ٢٠٢٥ ",
+    "Women's Collectiom 2025":"مجموعة النساء ٢٠٢٥ ",
+    "Recommended for you":"نرشح لك ",
+    "Best Seller":"الأكثر مبيعاّّ ",
+    "Electronics":"الإلكترونيات"
+  },
+  "product":{
+    "ALL products":" المنتجات",
+    "Search by product name":"اسم المنتج"
+  },
+  "cates":{
+    "All Categories":"الأقسام"
+  },
+  "brands":{
+    "All Brands":"العلامات التجارية"
+  },
+  "cart":{
+    "Shope Cart":"عربة التسوق",
+    "totat Cart Price":"إجمالي السعر",
+    "EGP":"جنية",
+    "Clear All Cart":"حذف الكل",
     "Remove":"إزاله",
-    "Add To Cart":"إضافة الي عربة التسوق"
-    },
-    "notfound":{
-        "Sorry, this page isn't available":"عذراّّ هذه الصفحة غير متاحة الان.",
-        "This link you follow may be broken, or the page may have been removed":"قد تكون تمت ازالتها او حذفت",
-        "go back to the previous page":"الرجوع الي الصفحة السابقة",
-        "Visit Our Help Center":"زور مركز المساعدة للتوصيح اكثر."
-    },
-    "login":{
-      "Login Now":"تسجيل الدخول",
-      "email":"البريد الإلكتروني",
-      "email is required":"البريد الإلكتروني مطلوب",
-      "enter valid email":"البريد الإلكتروني غير صحيح",
-      "password":"كلمة المرور",
-      "password is required":"كلمة المرور مطلوبة",
-      "enter valid password":"كلمة المرور غير صحيحة",
-      "login":"دخول",
-      "forgetpassword":"نسيت كلمة المرور",
-      "Don’t have an account":"ليس لديك حساب",
-      "create account":"إنشاء حساب"
-    },
-    "reg":{
-      "Register Now":"إنشاء حساب",
-      "name":"الإسم بالكامل",
-      "name is required":"اللإسم مطلوب",
-      "name should be more or equal tha 3 chars":"يجب أن يكون الإسم أكثر من ثلاثة حروف",
-      "name should be less or equal tha 20 chars":"يجب أن يكون اللإسم أقل من عشرين حرف",
-      "repassword":"تكرار كلمة السر",
-      "password confirmation is incorrect":"كلمة المرور غير صحيحة",
-      "phone":"رقم التليفون",
-      "phone is required":"رقم التليفون مطلوب",
-      "enter valid phone":"رقم التليفون غير صحيح",
-      "register":"إنشاء"
-    },
-    "forget":{
-      "forget password":"نسيت كلمة المرور",
-      "verify Code":"كود التحقق ",
-      "reset code":"إدخل الكود المرسل لك",
-      "resetCode is required":"الكود مطلوب",
-      "enter valid resetCode":"الكود غير صحيح",
-      "send":"إرسال",
-      "reset new password":"إنشاء كلمة مرور جديدة",
-      "new password":"كلمة المرور الجديدة",
-      "save":"حفظ"
-    },
-    "det":{
-      "details product":"تفاصيل المنتج"
-    },
-    "brand":{
-      "Barand Details":"تفاصيل العلامة التجارية",
-      "Brand Name":" إسم العلامة التجارية"
-    },
-    "orders":{
-      "All Orders Info":"تفاصيل الدفع",
-      "productName":"اسم المنتج",
-      "count":"العدد",
-      "price":"السعر",
-      "User Email":"البريد الإلكتروني للمستخدم",
-      "User order phone":"رقم الهاتف للمستخدم",
-      "User city":"محل الأقامة",
-      "order date":"تاريخ الطلب",
-      "payment status":"حالة الدفع",
-      "Is Delivered":"التوصيل",
-      "Order Id":"رقم الطلب",
-      "Payment Method":"طريقة الدفع",
-      "total price":"اجمال مبلغ الدفع"
-    },
-    "cash":{
-      "cash payment":"الدفع كاش",
-      "details":"التفاصيل",
-      "details is required":"تفاصيل الاستلام مطلوبة",
-      "city":"مكان الاقامة",
-      "city is required":"مكان الاقامة مطلوب",
-      "order now":"اطلب الان"
-    },
-    "online":{
-      "online payment":"الدفع اونلاين "
-    },
-    "footer":{
-      "Get Shopping App":"للحصول علي تطبيقنا",
-      "Send Your email to receive all that is new":"إرسل بريدك الإلكتروني ليصلك كل ما هو جديد ",
-      "Payment partners":"طرق الدفع",
-      "get in touch":"تواصل معنا"
-    }
+    "Online Pay":"دفع اونلاين",
+    "Cash Pay":"دفع كاش",
+    "There is no items":"لا يوجد منتجات مضافة"
+  },
+  "wish":{
+  "Wish List":"المفضلة",
+  "Remove":"إزاله",
+  "Add To Cart":"إضافة الي عربة التسوق"
+  },
+  "notfound":{
+      "Sorry, this page isn't available":"عذراّّ هذه الصفحة غير متاحة الان.",
+      "This link you follow may be broken, or the page may have been removed":"قد تكون تمت ازالتها او حذفت",
+      "go back to the previous page":"الرجوع الي الصفحة السابقة",
+      "Visit Our Help Center":"زور مركز المساعدة للتوصيح اكثر."
+  },
+  "login":{
+    "Login Now":"تسجيل الدخول",
+    "email":"البريد الإلكتروني",
+    "email is required":"البريد الإلكتروني مطلوب",
+    "enter valid email":"البريد الإلكتروني غير صحيح",
+    "password":"كلمة المرور",
+    "password is required":"كلمة المرور مطلوبة",
+    "enter valid password":"كلمة المرور غير صحيحة",
+    "login":"دخول",
+    "forgetpassword":"نسيت كلمة المرور",
+    "Don’t have an account":"ليس لديك حساب",
+    "create account":"إنشاء حساب"
+  },
+  "reg":{
+    "Register Now":"إنشاء حساب",
+    "name":"الإسم بالكامل",
+    "name is required":"اللإسم مطلوب",
+    "name should be more or equal tha 3 chars":"يجب أن يكون الإسم أكثر من ثلاثة حروف",
+    "name should be less or equal tha 20 chars":"يجب أن يكون اللإسم أقل من عشرين حرف",
+    "repassword":"تكرار كلمة السر",
+    "password confirmation is incorrect":"كلمة المرور غير صحيحة",
+    "phone":"رقم التليفون",
+    "phone is required":"رقم التليفون مطلوب",
+    "enter valid phone":"رقم التليفون غير صحيح",
+    "register":"إنشاء"
+  },
+  "forget":{
+    "forget password":"نسيت كلمة المرور",
+    "verify Code":"كود التحقق ",
+    "reset code":"إدخل الكود المرسل لك",
+    "resetCode is required":"الكود مطلوب",
+    "enter valid resetCode":"الكود غير صحيح",
+    "send":"إرسال",
+    "reset new password":"إنشاء كلمة مرور جديدة",
+    "new password":"كلمة المرور الجديدة",
+    "save":"حفظ"
+  },
+  "det":{
+    "details product":"تفاصيل المنتج"
+  },
+  "brand":{
+    "Barand Details":"تفاصيل العلامة التجارية",
+    "Brand Name":" إسم العلامة التجارية"
+  },
+  "orders":{
+    "All Orders Info":"تفاصيل الدفع",
+    "productName":"اسم المنتج",
+    "count":"العدد",
+    "price":"السعر",
+    "User Email":"البريد الإلكتروني للمستخدم",
+    "User order phone":"رقم الهاتف للمستخدم",
+    "User city":"محل الأقامة",
+    "order date":"تاريخ الطلب",
+    "payment status":"حالة الدفع",
+    "Is Delivered":"التوصيل",
+    "Order Id":"رقم الطلب",
+    "Payment Method":"طريقة الدفع",
+    "total price":"اجمال مبلغ الدفع"
+  },
+  "cash":{
+    "cash payment":"الدفع كاش",
+    "details":"التفاصيل",
+    "details is required":"تفاصيل الاستلام مطلوبة",
+    "city":"مكان الاقامة",
+    "city is required":"مكان الاقامة مطلوب",
+    "order now":"اطلب الان"
+  },
+  "online":{
+    "online payment":"الدفع اونلاين "
+  },
+  "footer":{
+    "Get Shopping App":"للحصول علي تطبيقنا",
+    "Send Your email to receive all that is new":"إرسل بريدك الإلكتروني ليصلك كل ما هو جديد ",
+    "Payment partners":"طرق الدفع",
+    "get in touch":"تواصل معنا"
   }
+}

@@ -19,6 +19,7 @@ private readonly _WishService=inject(WishService);
 private readonly _ToastrService=inject(ToastrService);
 private readonly _CartService=inject(CartService);
 wishListData:Iwishlist[]=[]
+numWishItems!:number
 unsubgetUserCart!:Subscription;
 unsubremove!:Subscription;
 unSubAdd!:Subscription;
@@ -27,7 +28,8 @@ ngOnInit() {
     this.unsubgetUserCart= this._WishService.getUserWishList().subscribe({
        next:(res)=>{
       this.wishListData=res.data;
-       },
+      this.numWishItems=res.count;
+    },
      })
 }
 remove(id:string){
@@ -42,6 +44,7 @@ this.unsubremove=this._WishService.removeWishListIteam(id).subscribe({
                   // res contain(data->to show in html ,count ,status:success )
             this.wishListData=res.data;
             this._WishService.wishproductno.next(res.count);
+            this.numWishItems=res.count;
         },
     
   })

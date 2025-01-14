@@ -1,3 +1,4 @@
+@if(numCartItems>0){
 <section class="mt-5 pt-5">
   <div class="container w-100 p-5 my-5 shadow rounded-5">
     <h2 class="text-main text-decoration-underline text-muted">
@@ -54,7 +55,7 @@
               ></span>
             </div>
           </div>
-          <h4>
+          <h4 class="small">
             <span>
               <i
                 (click)="remove(iteam.product.id)"
@@ -87,3 +88,10 @@
     </div>
   </div>
 </section>
+} @else if(numCartItems<0 || numCartItems==0){
+<div class="notdata d-flex justify-content-center align-items-center">
+  <h2 class="p-3 border-orange text-orange-emphasis bg-white">
+    {{ "cart.There is no items" | translate }}
+  </h2>
+</div>
+}

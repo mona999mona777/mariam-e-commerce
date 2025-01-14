@@ -15,6 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class CartComponent implements OnInit, OnDestroy{
 private readonly _CartService=inject(CartService);
 cartData:Icart={} as Icart;
+numCartItems!:number
 unsubgetUserCart!:Subscription
 unsubremove!:Subscription
 unsubUpdate!:Subscription
@@ -22,10 +23,9 @@ unsubClear!:Subscription
 ngOnInit() {
  this.unsubgetUserCart= this._CartService.getUsercart().subscribe({
     next:(res)=>{
-      console.log(res)
 this.cartData=res.data;
-    },
-    
+this.numCartItems=res.numOfCartItems    
+},
   })
   }
 remove(id:string){
@@ -33,6 +33,7 @@ remove(id:string){
     next:(res)=>{
       this.cartData=res.data;
       this._CartService.cartno.next(res.numOfCartItems);
+      this.numCartItems=res.numOfCartItems    
           },
   })
 }
@@ -41,6 +42,7 @@ update(id:string , count:number){
     next:(res)=>{
       this.cartData=res.data;
       this._CartService.cartno.next(res.numOfCartItems);
+      this.numCartItems=res.numOfCartItems    
           },
   })
 }
@@ -50,6 +52,7 @@ clearALLCart():void{
       this._CartService.cartno.next(0);
       if(res.message=="success"){
         this.cartData={} as Icart
+        this.numCartItems=0  
       }
           },
   })
