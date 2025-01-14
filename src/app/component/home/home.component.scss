@@ -5,10 +5,22 @@
 }
 .image {
     border-radius: 5px;
-    border: solid 1px var(--main-color);
+    // border: solid 1px var(--main-color);
     transition: box-shadow 0.5s;
     overflow: hidden;
   }
   .block:hover .image{
     box-shadow: 0 0 50px var(--main-color);
   }
+  .block{
+height: 400px !important; 
+ }
+ .mme{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+ }
+ .the-collection-image{
+  width: 100%;
+  height: 300px;
+ }

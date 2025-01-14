@@ -8,7 +8,7 @@ import { environment } from '../environment/environment';
 })
 export class OrderService {
 private readonly _HttpClient=inject(HttpClient);
-myHeaders:any= {token:localStorage.getItem("token")}
+// myHeaders:any= {token:localStorage.getItem("token")}
 
 
   // header in interceptors and by config file 

@@ -1,52 +1,72 @@
 <footer class="shadow-custome py-5">
   <div class="container">
-    <h2 class="m-0 h4 text-main">Get Dior App</h2>
+    <h2 class="m-0 h4 text-orange-emphasis fs-1">
+      {{ "footer.get in touch" | translate }}
+    </h2>
     <p class="text-muted small">
-      We Will Send You a Link, Open it on Your Phone to download the app
+      {{ "footer.Send Your email to receive all that is new" | translate }} .
     </p>
 
     <!-- inputs design  -->
     <div class="d-flex align-items-center gap-3 text-nowrap">
-      <input type="text" class="form-control" placeholder="Email" />
-      <button class="btn-main">Share App Link</button>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="{{ 'login.email' | translate }}..............
+        "
+      />
+      <button class="btn-main">
+        {{ "forget.send" | translate }}
+      </button>
     </div>
 
     <hr />
 
     <!-- footer payment Details Design  -->
-    <div class="pay-details d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-2">
-        <h3 class="h6 m-0">Payment partners</h3>
-        <img
-          src="./assets/images/amazon-pay.png"
-          width="30px"
-          alt="amazon-pay image"
-        />
-        <img
-          src="./assets/images/American-Express-Color.png"
-          width="30px"
-          alt=""
-        />
-        <img src="./assets/images/paypal.png" width="30px" alt="paypal image" />
-        <img
-          src="./assets/images/mastercard.webp"
-          width="30px"
-          alt="mastercard image"
-        />
+    <div class="pay-details row g-2">
+      <div class="col-lg-6">
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="h6 m-0 text-orange-emphasis">
+            {{ "footer.Payment partners" | translate }}
+          </h3>
+          <img
+            src="./assets/images/amazon-pay.png"
+            width="30px"
+            alt="amazon-pay image"
+          />
+          <img
+            src="./assets/images/American-Express-Color.png"
+            width="30px"
+            alt=""
+          />
+          <img
+            src="./assets/images/paypal.png"
+            width="30px"
+            alt="paypal image"
+          />
+          <img
+            src="./assets/images/mastercard.webp"
+            width="30px"
+            alt="mastercard image"
+          />
+        </div>
       </div>
-
-      <div class="d-flex align-items-center gap-2">
-        <h3 class="h6 m-0">Get Deliveries with Dior</h3>
-        <img
-          src="./assets/images/get-google-play.png"
-          width="75px"
-          alt="get-google-play image"
-        />
-        <img
-          src="./assets/images/get-apple-store.png"
-          width="75px"
-          alt="get-apple-store image"
-        />
+      <div class="col-lg-6">
+        <div class="d-flex align-items-center gap-2">
+          <h3 class="h6 m-0 text-orange-emphasis">
+            {{ "footer.Get Shopping App" | translate }}
+          </h3>
+          <img
+            src="./assets/images/get-google-play.png"
+            width="75px"
+            alt="get-google-play image"
+          />
+          <img
+            src="./assets/images/get-apple-store.png"
+            width="75px"
+            alt="get-apple-store image"
+          />
+        </div>
       </div>
     </div>
   </div>

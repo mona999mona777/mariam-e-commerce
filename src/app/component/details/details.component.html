@@ -1,50 +1,117 @@
 @if (detailsProduct) {
-<section class="container py-5 shadow my-5">
-  <h1 class="text-main text-decoration-underline">details product</h1>
-  <div class="row py-5 align-items-center">
-    <div class="col-md-3">
-      <owl-carousel-o [options]="theDetails">
-        @for (theImage of detailsProduct.images; track $index ) {
-        <ng-template carouselSlide>
-          <div>
+<section class="pt-5 mt-5">
+  <div class="container py-3 shadow my-5">
+    <h1 class="text-main text-decoration-underline">
+      {{ "det.details product" | translate }}
+    </h1>
+    <div class="row align-items-center">
+      <div class="col-4 col-sm-2 col-lg-1">
+        @if (detailsProduct.images.length<=3) { @for (theImage of
+        detailsProduct.images.slice(0,3); track $index ) {
+        <div class="mb-2">
+          <img
+            (click)="clicked(theImage)"
+            class="w-100"
+            src="{{ theImage }}"
+            alt="{{ detailsProduct.title }}"
+          />
+        </div>
+        } } @if (detailsProduct.images.length>3) { @for (theImage of
+        detailsProduct.images.slice(0,3); track $index ) {
+        <div class="mb-2">
+          <img
+            (click)="clicked(theImage)"
+            class="w-100"
+            src="{{ theImage }}"
+            alt="{{ detailsProduct.title }}"
+          />
+        </div>
+        }
+        <div
+          (click)="clickme()"
+          #ff
+          class="bg-orange py-3 px-1 text-center rounded"
+        >
+          <i class="fa-solid fa-plus text-white"></i>
+        </div>
+        }
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div hidden #mm>
+          @for (theImage of detailsProduct.images.slice(3); track $index ) {
+          <div class="mb-2">
             <img
+              (click)="clicked(theImage)"
               class="w-100"
-              height="250"
               src="{{ theImage }}"
               alt="{{ detailsProduct.title }}"
             />
           </div>
-        </ng-template>
-        }
-      </owl-carousel-o>
-    </div>
-    <div class="col-md-9 py-3">
-      <div class="p-2">
-        <div>
-          <h3 class="text-main h2">{{ detailsProduct.title }}</h3>
-          <p class="h4 small text-muted">
-            {{ detailsProduct.description }}
-          </p>
-
-          <h4 class="text-info-emphasis h6 mt-3">
-            <b> Category Name : {{ detailsProduct.category?.name }}</b>
-          </h4>
-          <div class="d-flex justify-content-between align-items-center">
-            <p>
-              <span>Price : {{ detailsProduct.price }} EGP</span>
-            </p>
-            <p>
-              <span><i class="fas fa-star rating-color"></i></span>
-              <span>{{ detailsProduct.ratingsAverage }}</span>
-            </p>
-          </div>
+          }
         </div>
-        <button
-          (click)="add(detailsProduct._id)"
-          class="btn bg-btnmain text-light cr w-100"
-        >
-          Add to cart
-        </button>
+      </div>
+      <div class="thehide col-sm-4">
+        <img
+          #swichImage
+          class="w-100"
+          height="250"
+          [src]="detailsProduct.imageCover"
+        />
+      </div>
+      <div class="col-8 col-sm-6 col-lg-7 py-3">
+        <div class="p-2">
+          <div>
+            <h3 class="text-main h2">{{ detailsProduct.title }}</h3>
+            <p class="h4 small text-muted">
+              {{ detailsProduct.description }}
+            </p>
+
+            <h4 class="text-orange h6 mt-3">
+              <b> Category Name : {{ detailsProduct.category?.name }}</b>
+            </h4>
+            <div class="d-flex justify-content-between align-items-center">
+              <p>
+                <span>Price : {{ detailsProduct.price }} EGP</span>
+              </p>
+              <p>
+                <span><i class="fas fa-star rating-color"></i></span>
+                <span>{{ detailsProduct.ratingsAverage }}</span>
+              </p>
+            </div>
+          </div>
+          <button
+            #car
+            id="{{ detailsProduct._id }}"
+            (click)="addtocart(detailsProduct._id)"
+            (click)="clickedHeart()"
+            class="rounded p-2 bg-button cr w-100"
+          >
+            {{ "wish.Add To Cart" | translate }}
+          </button>
+          @for (item of cartproducts; track $index) { @if
+          (item.product._id==detailsProduct._id) {
+          <div
+            #container
+            id="{{ detailsProduct._id }}"
+            class="d-flex flex-nowrap align-items-center justify-content-between border-orange rounded-2 shadow-lg bg-white w-25 mx-auto shadow"
+          >
+            <span class="d-block"
+              ><i
+                (click)="update(item.product.id, item.count + 1)"
+                class="fa-regular fa-square-plus mx-1 cr text-orange-emphasis"
+              ></i
+            ></span>
+            <span class="mx-1 d-block text-orange-emphasis">{{
+              item.count
+            }}</span>
+            <span class="d-block">
+              <i
+                (click)="update(item.product.id, item.count - 1)"
+                class="fa-regular fa-square-minus mx-1 cr text-orange-emphasis"
+              ></i>
+            </span>
+          </div>
+          } }
+        </div>
       </div>
     </div>
   </div>

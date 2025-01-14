@@ -1,12 +1,26 @@
 <nav
-  class="navbar navbar-expand-lg shadow position-fixed w-100 bg-info-subtle z-3"
+  class="navbar navbar-expand-lg shadow position-fixed top-0 start-0 end-0 bg-nav z-3"
 >
-  <div class="container">
-    <a class="navbar-brand text-main" routerLink="home"
-      >{{ "navbar.DIOR" | translate }}
+  <div class="container-fluid w-100">
+    <a
+      class="navbar-brand d-flex justify-content-center align-items-center"
+      routerLink="home"
+    >
+      <img
+        src="./assets/images/shopping.png"
+        class="rounded-circle mx-1"
+        width="75px"
+        alt="shopping image"
+      />
+
+      <h1>
+        <b class="logo fs-3 text-orange">
+          {{ "navbar.Shopping" | translate }}</b
+        >
+      </h1>
     </a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler bg-light fs-6"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -17,11 +31,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
-      class="collapse navbar-collapse justify-content-between"
+      #navbarSupportedContent
+      class="collapse navbar-collapse justify-content-between align-items-center"
       id="navbarSupportedContent"
     >
-      <ul class="navbar-nav">
-        <li class="nav-item">
+      <ul class="navbar-nav align-items-center">
+        <li (click)="closeIteamModal()" class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active-link"
@@ -29,8 +44,7 @@
             >{{ "navbar.Home" | translate }}</a
           >
         </li>
-
-        <li class="nav-item">
+        <li (click)="closeIteamModal()" class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active-link"
@@ -38,7 +52,7 @@
             >{{ "navbar.Products" | translate }}</a
           >
         </li>
-        <li class="nav-item">
+        <li (click)="closeIteamModal()" class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active-link"
@@ -46,7 +60,7 @@
             >{{ "navbar.Categories" | translate }}</a
           >
         </li>
-        <li class="nav-item">
+        <li (click)="closeIteamModal()" class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active-link"
@@ -54,24 +68,11 @@
             >{{ "navbar.Brands" | translate }}</a
           >
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link position-relative px-3"
-            routerLinkActive="active-link"
-            routerLink="wishlist"
-            >{{ "navbar.Wishlist" | translate }}
-            <i class="fa-solid fa-heart fa-2xl fs-5" style="color: #db0f2e"></i>
-            <span class="badge position-absolute top-0 end-0 bg-success">{{
-              count
-            }}</span></a
-          >
-        </li>
       </ul>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -80,55 +81,111 @@
           </a>
           <ul class="dropdown-menu">
             <li
+              (click)="closeIteamModal()"
               (click)="change('en')"
-              [class.bg-danger]="_TranslateService.currentLang == 'en'"
+              [class.logout]="_TranslateService.currentLang == 'en'"
             >
-              <a class="dropdown-item cr">EN</a>
+              <a class="dropdown-item cr logout">{{
+                "navbar.English" | translate
+              }}</a>
             </li>
             <li
+              (click)="closeIteamModal()"
               (click)="change('ar')"
-              [class.bg-danger]="_TranslateService.currentLang == 'ar'"
+              [class.logout]="_TranslateService.currentLang == 'ar'"
             >
-              <a class="dropdown-item cr">AR</a>
+              <a class="dropdown-item cr logout">{{
+                "navbar.Arabic" | translate
+              }}</a>
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li (click)="closeIteamModal()" class="nav-item p-0 socials">
+          <ul class="d-flex justify-content-center align-items-center p-0">
+            <li (click)="closeIteamModal()" class="mx-2">
+              <a class="social"><i class="fs-5 fa-brands fa-instagram"></i></a>
+            </li>
+            <li (click)="closeIteamModal()" class="mx-2">
+              <a class="social"><i class="fs-5 fa-brands fa-facebook"></i></a>
+            </li>
+            <li (click)="closeIteamModal()" class="mx-2">
+              <a class="social"><i class="fs-5 fa-brands fa-whatsapp"></i></a>
+            </li>
+            <li (click)="closeIteamModal()" class="mx-2">
+              <a class="social"><i class="fs-5 fa-brands fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </li>
+        <li
+          (click)="closeIteamModal()"
+          (click)="clickedHeart()"
+          class="nav-item"
+        >
           <a
             class="nav-link position-relative"
             routerLinkActive="active-link"
             routerLink="cart"
           >
-            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
-            <span class="badge position-absolute top-0 start-0 bg-danger">{{
+            <i class="fa-solid fa-cart-plus cr fa-2xl"></i>
+            <span class="badge position-absolute nav-top1 bg-orange">{{
               cartnumber
             }}</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"> <i class="fa-brands fa-youtube"></i></a>
-        </li>
-        <li class="nav-item cr">
+        <li
+          (click)="closeIteamModal()"
+          (click)="clickedHeart()"
+          class="nav-item socials"
+        >
           <a
-            class="nav-link text-decoration-underline"
-            (click)="_AuthService.logout()"
-            >{{ "navbar.SignOut" | translate }}</a
+            class="nav-link position-relative px-3"
+            routerLinkActive="active-link"
+            routerLink="wishlist"
           >
+            <i class="fa-solid fa-heart fa-2xl"></i>
+            <span class="badge position-absolute nav-top2 bg-orange">{{
+              count
+            }}</span></a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user fa-xl"></i>
+          </a>
+          <ul class="dropdown-menu">
+            @if (!VisiableAndHidden()) {
+            <li (click)="closeIteamModal()">
+              <a
+                class="dropdown-item logout"
+                routerLinkActive="active-link"
+                routerLink="login"
+                >{{ "navbar.Login" | translate }}</a
+              >
+            </li>
+            <li (click)="closeIteamModal()">
+              <a
+                class="dropdown-item logout"
+                routerLinkActive="active-link"
+                routerLink="register"
+                >{{ "navbar.Register" | translate }}</a
+              >
+            </li>
+            } @if (VisiableAndHidden()) {
+            <li>
+              <a
+                class="dropdown-item logout"
+                (click)="closeIteamModal()"
+                (click)="_AuthService.logout()"
+                >{{ "navbar.SignOut" | translate }}</a
+              >
+            </li>
+            }
+          </ul>
         </li>
       </ul>
     </div>

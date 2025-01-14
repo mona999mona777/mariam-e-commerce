@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TheSeachPipe implements PipeTransform {
 
-  transform(arrarofobject: any[] ,po:string): any[] {
-    return arrarofobject.filter( (item)=>item.title.toLowerCase().includes(po.toLowerCase()) );
-  }
+  transform(arrarofobject: any[] ,klma:string): any[] {
+return     arrarofobject.filter( (item)=>item.category.name.includes( klma));
+// .slice(0,6);
+}
 
 }

@@ -9,8 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class WishService {
 private readonly _HttpClient=inject(HttpClient);
 wishproductno:BehaviorSubject<any>=new BehaviorSubject(0);
-clicked:BehaviorSubject<boolean>=new BehaviorSubject(false);
-iddata:BehaviorSubject<[]>=new BehaviorSubject([]);
 
 
   addTOWishList(id:string):Observable<any>{

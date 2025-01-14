@@ -19,9 +19,7 @@ return  this._HttpClient.post(`${environment.baseUrl}/api/v1/cart`, {
   )
 }
 getUsercart():Observable<any>{
-  return this._HttpClient.get(`${environment.baseUrl}/api/v1/cart`,
-   
-  )
+  return this._HttpClient.get(`${environment.baseUrl}/api/v1/cart`)
 }
 removecartIteam(id:string):Observable<any>{
   return this._HttpClient.delete(`${environment.baseUrl}/api/v1/cart/${id}`,

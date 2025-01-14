@@ -1,55 +1,105 @@
-@if (productData) {
+@if (productList) {
 <section class="container-fluid my-5 py-5 shadow">
-  <h1 class="text-main text-decoration-underline h2 ms-5">ALL product</h1>
-  <div class="row g-3">
-    @for (item of productData; track item._id) {
-    <div [routerLink]="['/details', item._id]" class="col-3">
-      <div
-        class="h-100 product border bg-sec border-3 border-info-subtle shadow rounded-5 h-100"
-      >
-        <div class="row h-100 bg-sec p-3">
-          <div class="col-6 col-md-4">
-            <owl-carousel-o [options]="theProductData">
-              @for (image of item.images; track $index) {
-              <ng-template carouselSlide>
-                <img
-                  class="w-100 rounded-4 product"
-                  src="{{ image }}"
-                  alt="{{ item.title }}"
-                />
-              </ng-template>
-              }
-            </owl-carousel-o>
-          </div>
-
-          <div class="col-6 col-md-8">
-            <h3 class="h6 text-info-emphasis">
-              Category : {{ item.category.name }}
-            </h3>
-            <h3 class="h6 text-info-emphasis">
-              Brand Name: {{ item.brand.name }}
-            </h3>
-            <h3 class="h4 text-main">
-              {{ item.title.split(" ", 3).join(" ") }}
-            </h3>
-            <p class="text-light p-0 mb-0">
-              {{ item.description.split(" ", 5).join(" ") }}.......
-            </p>
+  <h2 class="text-main text-decoration-underline ms-5 mt-5">
+    {{ "product.ALL products" | translate }}
+  </h2>
+  <input
+    [(ngModel)]="searhValue"
+    type="search"
+    placeholder="{{ 'product.Search by product name' | translate }}........."
+    class="form-control w-75 mx-auto shadow my-3"
+  />
+  <div class="container-fluid">
+    <div class="row g-3">
+      @for (product of productList|productSearch:searhValue; track product._id)
+      {
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 block">
+        <div
+          class="p-2 h-100 bg-main-subtle rounded position-relative d-flex flex-column justify-content-between"
+        >
+          <div class="the-image">
+            <img
+              [routerLink]="['/details', product._id]"
+              [src]="product.imageCover"
+              class="image w-100"
+              height="250px"
+              [alt]="product.title"
+            />
+            <span
+              (click)="clickedHeart()"
+              (click)="chngecolor($event, product._id)"
+              class="bg-light p-2 rounded position-absolute top-0 end-0 shadow-lg"
+              ><i
+                #prod
+                class="fa-regular fa-heart text-orange-emphasis fs-4"
+                id="{{ product._id }}"
+              ></i
+            ></span>
           </div>
           <div
-            class="col-12 d-flex align-items-center justify-content-between px-3 py-0 mt-0"
+            class="rating-addtocarttocart w-100 d-flex justify-content-between align-items-center position-absolute top end-0 px-3"
           >
-            <p>Price : {{ item.price }} EGP</p>
-            <p>
-              <i class="fa-solid fa-star rating-color"></i>
-              {{ item.ratingsAverage }}
+            <p
+              class="mb-0 ps-2 pt-2 w-75"
+              [routerLink]="['/details', product._id]"
+            >
+              {{ product.ratingsAverage }}
+              <i class="fas fa-star rating-color"></i>
+            </p>
+            <span
+              #cars
+              id="{{ product._id }}"
+              (click)="addtocart(product._id)"
+              (click)="clickedHeart()"
+              class="bg-light p-1 rounded cars"
+            >
+              <i class="fa-solid fa-cart-plus text-orange-emphasis cr fs-4"></i>
+            </span>
+            <!-- //////////////////////////////////////////////////////////////// -->
+            @for (item of cartproducts; track $index) { @if
+            (item.product._id==product._id) {
+            <div
+              #container
+              id="{{ product._id }}"
+              class="d-flex flex-nowrap align-items-center justify-content-between border-orange rounded-2 shadow-lg bg-white"
+            >
+              <span class="d-block"
+                ><i
+                  (click)="update(item.product.id, item.count + 1)"
+                  class="fa-regular fa-square-plus mx-1 cr text-orange-emphasis"
+                ></i
+              ></span>
+              <span class="mx-1 d-block text-orange-emphasis">{{
+                item.count
+              }}</span>
+              <span class="d-block">
+                <i
+                  (click)="update(item.product.id, item.count - 1)"
+                  class="fa-regular fa-square-minus mx-1 cr text-orange-emphasis"
+                ></i>
+              </span>
+            </div>
+            } }
+            <!-- /////////////////////////////////// -->
+          </div>
+          @if (product.ratingsAverage>=4) {
+          <p
+            class="bg-main position-absolute top-0 start-0 text-light rounded-3 p-1"
+          >
+            {{ "home.Best Seller" | translate }}
+          </p>
+          }
+          <div class="dec" [routerLink]="['/details', product._id]">
+            <p>{{ product.title.split(" ", 3).join(" ") }}..</p>
+            <p class="text-orange-emphasis">
+              {{ "orders.price" | translate }} : {{ product.price }}
+              {{ "cart.EGP" | translate }}
             </p>
           </div>
         </div>
       </div>
+      }
     </div>
-    }
   </div>
 </section>
-
 }

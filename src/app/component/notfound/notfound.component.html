@@ -1,1 +1,30 @@
-<p>notfound works!</p>
+<section
+  class="page d-flex justify-content-center align-items-center overflow-hidden"
+>
+  <div class="text-center text-orange">
+    <h1>{{ "notfound.Sorry, this page isn't available" | translate }}</h1>
+    <p class="text-main">
+      {{
+        "notfound.This link you follow may be broken, or the page may have been removed"
+          | translate
+      }}.
+    </p>
+    <img
+      class="w-25 my-5"
+      src="./assets/images/not found.png"
+      alt="not found imag"
+    />
+    <div class="d-flex flex-wrap justify-content-evenly align-items-center">
+      <P>
+        <a (click)="back()" class="text-primary text-decoration-underline mx-5"
+          >{{ "notfound.go back to the previous page" | translate }}
+        </a>
+      </P>
+      <p>
+        <a class="text-primary text-decoration-underline mx-5">{{
+          "notfound.Visit Our Help Center" | translate
+        }}</a>
+      </p>
+    </div>
+  </div>
+</section>

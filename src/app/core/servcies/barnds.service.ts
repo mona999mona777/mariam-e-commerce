@@ -9,7 +9,18 @@ import { environment } from '../environment/environment';
 export class BarndsService {
 
   private readonly _HttpClient=inject(HttpClient);
-  getAllCategoriesApi():Observable<any>{
+
+
+
+  getAllbrandsApi():Observable<any>{
     return this._HttpClient.get(`${environment.baseUrl}/api/v1/brands`);
     }
+
+    getspacificbransApi(id:string):Observable<any>{
+      return this._HttpClient.get(`${environment.baseUrl}/api/v1/brands/${id}`);
+      }
+
+
+
+
 }

@@ -1,9 +1,11 @@
-<section class="container w-75 mx-auto shadow my-5 p-5">
-  <h1 class="h2 text-main text-decoration-underline">All Orders Info:</h1>
+<section class="container w-75 mx-auto my-5 p-5">
+  <h2 class="text-main text-decoration-underline mt-5">
+    {{ "orders.All Orders Info" | translate }}:
+  </h2>
 
   @for (order of alloreders; track order._id) {
   <div
-    class="row product bg-success-subtle my-3 align-items-center justify-content-center py-3"
+    class="row product bg-main-subtle my-3 align-items-center justify-content-center pt-3 shadow"
   >
     @for (item of order.cartItems; track $index) {
 
@@ -16,25 +18,41 @@
         />
       </div>
       <div class="col-6 col-md-4">
-        <p>productName : {{ item.product.title }}</p>
-        <p>count : {{ item.count }}</p>
-        <p>price : {{ item.price }}</p>
+        <p>{{ "orders.productName" | translate }} : {{ item.product.title }}</p>
+        <p>{{ "orders.count" | translate }} : {{ item.count }}</p>
+        <p>
+          {{ "orders.price" | translate }} : {{ item.price }}
+          {{ "cart.EGP" | translate }}
+        </p>
       </div>
     </div>
 
     }
-    <div class="row mt-3 bg-info-subtle py-3">
+    <div class="row mt-3 bg-orange pt-3">
       <div class="col-6">
-        <P>User Email: {{ order.user.email }}</P>
-        <P>User order phone: {{ order.shippingAddress.phone }}</P>
-        <P>User city: {{ order.shippingAddress.city }}</P>
-        <P>date: {{ order.paidAt }}</P>
+        <P>{{ "orders.User Email" | translate }}: {{ order.user.email }}</P>
+        <P
+          >{{ "orders.User order phone" | translate }}:
+          {{ order.shippingAddress.phone }}</P
+        >
+        <P
+          >{{ "orders.User city" | translate }}:
+          {{ order.shippingAddress.city }}</P
+        >
+        <P>{{ "orders.order date" | translate }}: {{ order.paidAt | date }}</P>
       </div>
       <div class="col-6">
-        <P>payment status: {{ order.isPaid }}</P>
-        <P>Is Delivered: {{ order.isDelivered }}</P>
-        <P>Order Id: {{ order.id }}</P>
-        <P>Payment Method : {{ order.paymentMethodType }}</P>
+        <P>{{ "orders.payment status" | translate }}: {{ order.isPaid }}</P>
+        <P>{{ "orders.Is Delivered" | translate }}: {{ order.isDelivered }}</P>
+        <P>{{ "orders.Order Id" | translate }}: {{ order.id }}</P>
+        <P
+          >{{ "orders.Payment Method" | translate }} :
+          {{ order.paymentMethodType }}</P
+        >
+        <P
+          >{{ "orders.total price" | translate }} :
+          {{ order.totalOrderPrice }}</P
+        >
       </div>
     </div>
   </div>

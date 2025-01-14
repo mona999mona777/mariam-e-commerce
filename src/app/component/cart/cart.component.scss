@@ -1,0 +1,23 @@
+@media (max-width: 400px) {
+    h2{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    h3{
+        font-size: 8px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    h4 ,button,span{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    p{
+        font-size: 8px;
+        font-weight: 300;
+    }
+  }
+
+  h3{
+    white-space: nowrap;
+}

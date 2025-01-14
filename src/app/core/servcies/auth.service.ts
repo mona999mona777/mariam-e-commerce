@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from '../environment/environment';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
+import { WishService } from './wish.service';
+import { CartService } from './cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,8 @@ export class AuthService {
 userdata:any =null;
 
    private readonly _HttpClient=inject(HttpClient);
+   private readonly _WishService=inject(WishService);
+   private readonly _CartService=inject(CartService);
    private readonly _Router=inject(Router);
 
 
@@ -29,8 +33,12 @@ setloginform(data:object):Observable<any>{
 logout():void{
         localStorage.removeItem("token");
         this.userdata=null;
+        this._WishService.wishproductno.next(0);
+        this._CartService.cartno.next(0);
+
+
         //call api remove tooken (ان وجد api)
-this._Router.navigate(['/login'])
+this._Router.navigate(['/home'])
 }
 // 4.forgetpassword api 
 forgetpassword(data:object):Observable<any>{
@@ -59,11 +67,8 @@ decodetoken():void{
 this.userdata=   jwtDecode(localStorage.getItem("token") !)
  this.userId=this.userdata.id;
 
-console.log(this.userdata)
-console.log(this.userId)
-
-
-
+// console.log(this.userdata)
+// console.log(this.userId)
 }
 
 // 8.api of allorders

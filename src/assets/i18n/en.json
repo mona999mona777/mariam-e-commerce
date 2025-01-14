@@ -1,15 +1,130 @@
 {
   "navbar":{
-    "DIOR":"DIOR",
+    "Shopping":"Shopping",
     "Home":"Home" ,
     "Brands":"Brands",
     "Products":"Product",
     "Categories":"Categories",
     "SignOut":"SignOut",
     "Wishlist":"WishList",
-    "Lang":"Lang"
+    "Lang":"Lang",
+    "Login":"Login",
+    "Register":"Register",
+    "English":"English",
+    "Arabic":"Arabic"
   },
   "home":{
-
-  }
+      "Winter Collection 2025":"Winter Collection 2025",
+      "Men's Collectiom 2025":"Men's Collectiom 2025",
+      "Women's Collectiom 2025":"Women's Collectiom 2025",
+      "Recommended for you":"Recommended for you",
+      "Best Seller":"Best Seller",
+      "Electronics":"Electronics"
+    },
+    "product":{
+      "ALL products":"ALL products",
+      "Search by product name":"Search by product name"
+    },
+    "cates":{
+      "All Categories":"All Categories"
+    },
+    "brands":{
+      "All Brands":"All Brands"
+    },
+    "cart":{
+      "Shope Cart":"Shope Cart",
+      "totat Cart Price":"totat Cart Price",
+      "EGP":"EGP",
+      "Clear All Cart":"Clear All Cart",
+      "Remove":"Remove",
+      "Online Pay":"Online Pay",
+      "Cash Pay":"Cash Pay"
+    },
+    "wish":{
+    "Wish List":"Wish List",
+    "Remove":"Remove",
+    "Add To Cart":"Add To Cart"
+    },
+    "notfound":{
+      "Sorry, this page isn't available":"Sorry, this page isn't available",
+      "This link you follow may be broken, or the page may have been removed":"This link you follow may be broken, or the page may have been removed",
+      "go back to the previous page":"go back to the previous page",
+      "Visit Our Help Center":"Visit Our Help Center"
+  },
+  "login":{
+    "Login Now":"Login Now",
+    "email":"email",
+    "email is required":"email is required",
+    "enter valid email":"enter valid email",
+    "password":"password",
+    "password is required":"password is required",
+    "enter valid password":"enter valid password",
+    "login":"login",
+    "forgetpassword":"forget password",
+    "Don’t have an account":"Don’t have an account",
+    "create account":"create account"
+  },
+  "reg":{
+    "Register Now":"Register Now",
+    "name":"name",
+    "name is required":"name is required",
+    "name should be more or equal tha 3 chars": "name should be more or equal tha 3 chars",
+    "name should be less or equal tha 20 chars": "name should be less or equal tha 20 chars",
+    "repassword":"repassword",
+    "password confirmation is incorrect":"password confirmation is incorrect",
+    "phone":"phone",
+    "phone is required":"phone is required",
+    "enter valid phone":"enter valid phone",
+    "register":"register"
+  },
+  "forget":{
+    "forget password":"forget password",
+    "verify Code":"verify Code",
+    "reset code":"reset code",
+    "resetCode is required":"resetCode is required",
+    "enter valid resetCode":"enter valid reset Code",
+    "send":"send",
+    "reset new password":"reset new password",
+    "new password":"new password",
+    "save":"save"
+  },
+  "det":{
+      "details product":"details product"
+    },
+    "brand":{
+      "Barand Details":"Barand Details",
+      "Brand Name":"Brand Name"
+    },
+    "orders":{
+      "All Orders Info":"All Orders Info",
+      "productName":"productName",
+      "count":"count",
+      "price":"price",
+      "User Email":"User Email",
+      "User order phone":"User order phone",
+      "User city":"User city",
+      "order date":"order date",
+      "payment status":"payment status",
+      "Is Delivered":"Is Delivered",
+      "Order Id":"Order Id",
+      "Payment Method":"Payment Method",
+      "total price":"Total Price"
+    },
+    "cash":{
+      "cash payment":"cash payment",
+      "details":"details",
+      "details is required":"details is required",
+      "city":"city",
+      "city is required":"city is required",
+      "order now":"order now"
+    },
+    "online":{
+      "online payment":"online payment"
+    },
+    "footer":{
+      "Get Shopping App":"Get Shopping App",
+      "Send Your email to receive all that is new":"Send Your email to receive all that is new",
+      "Payment partners":"Payment partners",
+      "get in touch":"get in touch"
+    }
 }

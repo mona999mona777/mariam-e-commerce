@@ -6,20 +6,15 @@ export const blockGuard: CanActivateFn = (route, state) => {
 
                        // you havenot token
        if(typeof localStorage!=='undefined'){
-                    if( localStorage.getItem("token") == null){
+                    if( localStorage.getItem("token") == null||localStorage.getItem("token") !== null){
                       return true;
-                    }
-                  
+                    }            
                   else{
                          // navigate to home
                       _Router.navigate(['/home'])
                       return false;
-
                     }
-
        }
-
-
    else{
    return false;
    }

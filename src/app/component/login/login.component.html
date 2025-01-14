@@ -1,8 +1,10 @@
-<section class="bg-custome shadow p-3 my-2 rounded-4">
-  <h1 class="h2 text-main text-decoration-underline">login Now</h1>
+<section class="bg-main-subtle container width-info shadow p-3 rounded-4">
+  <h1 class="h2 text-main text-decoration-underline">
+    {{ "login.Login Now" | translate }}
+  </h1>
   <form [formGroup]="login" (ngSubmit)="loginfunction()">
     <div class="my-2">
-      <label for="email">email</label>
+      <label for="email">{{ "login.email" | translate }}</label>
       <input
         [ngClass]="{ 
             'is-valid':!login.get('email')?.errors && (login.get('email')?.touched ||
@@ -19,15 +21,15 @@
       login.get('email')?.dirty)) {
       <div class="alert alert-danger">
         @if (login.get('email')?.getError('required')) {
-        <p class="m-0">email is required.</p>
+        <p class="m-0">{{ "login.email is required" | translate }}.</p>
         } @else if (login.get('email')?.getError('email')) {
-        <p class="m-0">enter valid email.</p>
+        <p class="m-0">{{ "login.enter valid email" | translate }}.</p>
         }
       </div>
       }
     </div>
     <div class="my-2">
-      <label for="password">password</label>
+      <label for="password">{{ "login.password" | translate }}</label>
       <input
         [ngClass]="{ 
         'is-valid':!login.get('password')?.errors && (login.get('password')?.touched ||
@@ -44,29 +46,39 @@
       login.get('password')?.dirty)) {
       <div class="alert alert-danger">
         @if (login.get('password')?.getError('required')) {
-        <p class="m-0">password is required.</p>
+        <p class="m-0">{{ "login.password is required" | translate }}.</p>
         } @else if (login.get('password')?.getError('pattern')) {
-        <p class="m-0">enter valid password.</p>
+        <p class="m-0">{{ "login.enter valid password" | translate }}.</p>
         }
       </div>
       }
     </div>
-    <button class="btn-main ms-auto d-block" type="submit">
-      login @if (isloading) { <span class="fas fa-spin fa-spinner"></span>}
+    <button
+      class="btn-main d-block"
+      [class.ms-auto]="textlag()"
+      [class.me-auto]="!textlag()"
+      type="submit"
+    >
+      {{ "login.login" | translate }} @if (isloading) {
+      <span class="fas fa-spin fa-spinner"></span>}
     </button>
 
     <p class="text-center">
-      <a class="text-primary text-decoration-underline" routerLink="/forget"
-        >forgetpasswoed?</a
+      <a
+        class="text-primary text-decoration-underline mx-2"
+        routerLink="/forget"
+        >{{ "login.forgetpassword" | translate }}?
+      </a>
+      {{ "login.Don’t have an account" | translate }}?
+      <a
+        class="text-primary text-decoration-underline mx-2"
+        routerLink="/register"
+        >{{ "login.create account" | translate }}</a
       >
-      <!-- Don’t have an account?
-      <a class="link-primary" routerLink="/register"
-        >create account</a
-      > -->
     </p>
 
     @if (messgerror) {
-    <p class="text-center alert alert-danger w-50 mx-auto">
+    <p class="text-center alert alert-danger w-100 mx-auto">
       {{ messgerror }}
     </p>
     } @if (messsuccess) {

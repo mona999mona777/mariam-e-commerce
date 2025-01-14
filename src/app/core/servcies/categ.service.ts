@@ -9,14 +9,14 @@ import { environment } from '../environment/environment';
 export class CategService {
 private readonly _HttpClient=inject(HttpClient);
 
-getAllCategoriesApi():Observable<any>{
+getAllCategories():Observable<any>{
 return this._HttpClient.get(`${environment.baseUrl}/api/v1/categories`);
 }
-getSpecificCategoriesApi(id:string|null):Observable<any>{
+getSpecificCategories(id:string|null):Observable<any>{
   return this._HttpClient.get(`${environment.baseUrl}/api/v1/categories/${id}`);
   }
 
-  getSOneCategoriesApi(id:string|null):Observable<any>{
+  getSOneCategories(id:string|null):Observable<any>{
     return this._HttpClient.get(`${environment.baseUrl}/api/v1/categories/${id}/subcategories`);
     }
   

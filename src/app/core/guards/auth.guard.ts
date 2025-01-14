@@ -6,19 +6,15 @@ const _Router=inject(Router);
 
          // you have token
          if(typeof localStorage!=='undefined'){
-          
                       if( localStorage.getItem("token") !== null){
                              return true
                       }
                       else{
                         // navigate to login
-                          _Router.navigate(['/login'])
+                          _Router.navigate(['/home'])
                             return false;
                       }
   }
-
-
-
   else{
     return false;
   }

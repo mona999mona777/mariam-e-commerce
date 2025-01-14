@@ -1,0 +1,97 @@
+<section class="mt-5 py-5">
+  <div class="container-fluid">
+    <h2 class="text-main text-decoration-underline mt-5">
+      {{ "home.Women's Collectiom 2025" | translate }}
+    </h2>
+    <div class="row g-3">
+      @for (product of productList|theSeach:Women; track product._id) {
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 block">
+        <div
+          class="p-2 h-100 bg-main-subtle rounded position-relative d-flex flex-column justify-content-between"
+        >
+          <div class="the-image">
+            <img
+              [routerLink]="['/details', product._id]"
+              [src]="product.imageCover"
+              class="image w-100"
+              height="250px"
+              [alt]="product.title"
+            />
+            <span
+              (click)="clickedHeart()"
+              (click)="chngecolor($event, product._id)"
+              class="bg-light p-2 rounded position-absolute top-0 end-0 shadow-lg"
+              ><i
+                #prod
+                class="fa-regular fa-heart text-orange-emphasis fs-4"
+                id="{{ product._id }}"
+              ></i
+            ></span>
+          </div>
+          <div
+            class="rating-addtocarttocart w-100 d-flex justify-content-between align-items-center position-absolute top end-0 px-3"
+          >
+            <p
+              class="mb-0 ps-2 pt-2 w-75"
+              [routerLink]="['/details', product._id]"
+            >
+              {{ product.ratingsAverage }}
+              <i class="fas fa-star rating-color"></i>
+            </p>
+            <span
+              #cars
+              id="{{ product._id }}"
+              (click)="addtocart(product._id)"
+              (click)="clickedHeart()"
+              class="bg-light p-1 rounded cars"
+            >
+              <i class="fa-solid fa-cart-plus text-orange-emphasis cr fs-4"></i>
+            </span>
+            <!-- //////////////////////////////////////////////////////////////// -->
+            @for (item of cartproducts; track $index) { @if
+            (item.product._id==product._id) {
+            <div
+              #container
+              id="{{ product._id }}"
+              class="d-flex flex-nowrap align-items-center justify-content-between border-orange rounded-2 shadow-lg bg-white"
+            >
+              <span class="d-block"
+                ><i
+                  (click)="update(item.product.id, item.count + 1)"
+                  class="fa-regular fa-square-plus mx-1 cr text-orange-emphasis"
+                ></i
+              ></span>
+              <span class="mx-1 d-block text-orange-emphasis">{{
+                item.count
+              }}</span>
+              <span class="d-block">
+                <i
+                  (click)="update(item.product.id, item.count - 1)"
+                  class="fa-regular fa-square-minus mx-1 cr text-orange-emphasis"
+                ></i>
+              </span>
+            </div>
+            } }
+            <!-- /////////////////////////////////// -->
+          </div>
+          @if (product.ratingsAverage>=4.5) {
+          <p
+            class="bg-main position-absolute top-0 start-0 text-light rounded-3 p-1"
+          >
+            {{ "home.Best Seller" | translate }}
+          </p>
+          }
+          <div class="dec pt-3" [routerLink]="['/details', product._id]">
+            <p>{{ product.title.split(" ", 2).join(" ") }}..</p>
+            <p class="text-orange-emphasis">
+              {{ "orders.price" | translate }} : {{ product.price }}
+              {{ "cart.EGP" | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      }
+    </div>
+  </div>
+</section>
