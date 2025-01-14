@@ -94,4 +94,20 @@ closeIteamModal(){
 clickedHeart(){
   this._HeartandcartService.clickedHeart();
 }
+navDrop(){
+  if (isPlatformBrowser(this._PLATFORM_ID)) {
+    if(localStorage.getItem('lang')!=null){
+      if (localStorage.getItem('lang')=='en') {
+        return false;
+      }
+      if (localStorage.getItem('lang')=='ar') {
+        return true;
+      }
+    }
+    if(localStorage.getItem('lang')==null){
+        return false;
+    }
+  }
+  return false;
+}
 }

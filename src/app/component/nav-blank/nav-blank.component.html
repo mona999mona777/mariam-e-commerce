@@ -148,6 +148,7 @@
             }}</span></a
           >
         </li>
+        @if(navDrop()==true){
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -157,7 +158,7 @@
           >
             <i class="fa-solid fa-user fa-xl"></i>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu nnn authenav">
             @if (!VisiableAndHidden()) {
             <li (click)="closeIteamModal()">
               <a
@@ -187,6 +188,47 @@
             }
           </ul>
         </li>
+        } @else if(navDrop()==false){
+        <li class="nav-item dropdown dropdown-dir">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user fa-xl"></i>
+          </a>
+          <ul class="dropdown-menu nnn authenav">
+            @if (!VisiableAndHidden()) {
+            <li (click)="closeIteamModal()">
+              <a
+                class="dropdown-item logout"
+                routerLinkActive="active-link"
+                routerLink="/SiginIn"
+                >{{ "navbar.Login" | translate }}</a
+              >
+            </li>
+            <li (click)="closeIteamModal()">
+              <a
+                class="dropdown-item logout"
+                routerLinkActive="active-link"
+                routerLink="/SiginUp"
+                >{{ "navbar.Register" | translate }}</a
+              >
+            </li>
+            } @if (VisiableAndHidden()) {
+            <li>
+              <a
+                class="dropdown-item logout"
+                (click)="closeIteamModal()"
+                (click)="_AuthService.logout()"
+                >{{ "navbar.SignOut" | translate }}</a
+              >
+            </li>
+            }
+          </ul>
+        </li>
+        }
       </ul>
     </div>
   </div>
