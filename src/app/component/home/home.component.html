@@ -216,8 +216,14 @@
           </p>
           }
           <div class="dec" [routerLink]="['/details', product._id]">
-            <p>{{ product.title.split(" ", 3).join(" ") }}..</p>
-            <p class="text-orange-emphasis">
+            <p [class.text-start]="textlag()" [class.text-end]="!textlag()">
+              {{ product.title.split(" ", 3).join(" ") }}..
+            </p>
+            <p
+              [class.text-start]="textlag()"
+              [class.text-end]="!textlag()"
+              class="text-orange-emphasis"
+            >
               {{ "orders.price" | translate }} : {{ product.price }}
               {{ "cart.EGP" | translate }}
             </p>
@@ -312,8 +318,14 @@
           </p>
           }
           <div class="dec" [routerLink]="['/details', product._id]">
-            <p>{{ product.title.split(" ", 3).join(" ") }}..</p>
-            <p class="text-orange-emphasis">
+            <p [class.text-start]="textlag()" [class.text-end]="!textlag()">
+              {{ product.title.split(" ", 3).join(" ") }}..
+            </p>
+            <p
+              [class.text-start]="textlag()"
+              [class.text-end]="!textlag()"
+              class="text-orange-emphasis"
+            >
               {{ "orders.price" | translate }} : {{ product.price }}
               {{ "cart.EGP" | translate }}
             </p>
@@ -409,8 +421,14 @@
           </p>
           }
           <div class="dec" [routerLink]="['/details', product._id]">
-            <p>{{ product.title.split(" ", 3).join(" ") }}..</p>
-            <p class="text-orange-emphasis">
+            <p [class.text-start]="textlag()" [class.text-end]="!textlag()">
+              {{ product.title.split(" ", 3).join(" ") }}..
+            </p>
+            <p
+              [class.text-start]="textlag()"
+              [class.text-end]="!textlag()"
+              class="text-orange-emphasis"
+            >
               {{ "orders.price" | translate }} : {{ product.price }}
               {{ "cart.EGP" | translate }}
             </p>

@@ -1,4 +1,4 @@
 export const environment={
 baseUrl:"https://ecommerce.routemisr.com",
-urlServer:"mariamyasser-ecommerce.netlify.app"
+urlServer:"https://mariamyasser-ecommerce.netlify.app"
 }
