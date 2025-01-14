@@ -22,8 +22,9 @@ export function HttpLoaderFactory(http:HttpClient){
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes,withInMemoryScrolling({scrollPositionRestoration:'top'})),
      provideClientHydration(),provideHttpClient(withFetch(),withInterceptors([headerInterceptor,errorsInterceptor,loadingscreenInterceptor])),
-     provideAnimations(),provideToastr(),importProvidersFrom(NgxSpinnerModule , TranslateModule.forRoot({
-      // defaultLanguage:'ar',
+     provideAnimations(),provideToastr(),importProvidersFrom(NgxSpinnerModule , 
+      TranslateModule.forRoot({
+      defaultLanguage:'en',
      loader:{
       provide:TranslateLoader,
       useFactory:HttpLoaderFactory,

@@ -193,3 +193,9 @@ color: white !important;
     left:-190% !important;
   }
 }
+.social,
+.nav-link {
+  -webkit-transition: unset !important;
+  -o-transition: unset !important;
+  transition: unset !important;
+}
