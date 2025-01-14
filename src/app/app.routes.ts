@@ -101,12 +101,12 @@ export const routes: Routes = [
     canActivate: [blockGuard],
     children: [
       {
-        path: 'siginIn',
+        path: 'SiginIn',
         loadComponent: () => import('./component/login/login.component').then(m => m.LoginComponent),
         title: 'shopping signin'
       },
       {
-        path: 'siginUp',
+        path: 'SiginUp',
         loadComponent: () => import('./component/register/register.component').then(m => m.RegisterComponent),
         title: 'shopping create account'
       },

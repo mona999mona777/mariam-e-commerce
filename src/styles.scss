@@ -187,3 +187,7 @@ a:hover {
 .item:hover .text-orange-emphasis{
 color: white !important;
 }
+.dropdown-menu[data-bs-popper] {
+  // right: 0 !important;
+  left: -190% !important;
+}

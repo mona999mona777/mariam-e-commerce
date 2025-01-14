@@ -65,7 +65,7 @@ if(this.register.valid){
                     this.isloading=false
                     if(res.message == "success"){
                     setTimeout(() => {
-                      this._Router.navigate(['/login']);
+                      this._Router.navigate(['/SiginIn']);
                     }, 1000);
                     }
                       },
