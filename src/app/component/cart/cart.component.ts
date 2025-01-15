@@ -1,9 +1,10 @@
 import { Icart } from './../../core/interfaces/icart';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { CartService } from '../../core/servcies/cart.service';
 import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class CartComponent implements OnInit, OnDestroy{
 private readonly _CartService=inject(CartService);
+private readonly _PLATFORM_ID=inject(PLATFORM_ID);
 cartData:Icart={} as Icart;
 numCartItems!:number
 unsubgetUserCart!:Subscription
@@ -56,6 +58,22 @@ clearALLCart():void{
       }
           },
   })
+}
+textlag(){
+    if (isPlatformBrowser(this._PLATFORM_ID)) {
+    if (localStorage.getItem("lang")!=null) {
+         if (localStorage.getItem("lang")=='en') {
+          return true;
+         }
+         else if (localStorage.getItem("lang")=='ar') {
+          return false;
+         }
+    } 
+    else if (localStorage.getItem("lang")==null) {
+                 return true;            
+        } 
+    }
+          return false
 }
 ngOnDestroy(): void {
   this.unsubgetUserCart.unsubscribe();

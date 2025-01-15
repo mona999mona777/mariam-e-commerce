@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { WishService } from '../../core/servcies/wish.service';
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -6,6 +6,7 @@ import { Iwishlist } from '../../core/interfaces/iwishlist';
 import { CartService } from '../../core/servcies/cart.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-wishlist',
@@ -18,6 +19,7 @@ export class WishlistComponent {
 private readonly _WishService=inject(WishService);
 private readonly _ToastrService=inject(ToastrService);
 private readonly _CartService=inject(CartService);
+private readonly _PLATFORM_ID=inject(PLATFORM_ID);
 wishListData:Iwishlist[]=[]
 numWishItems!:number
 unsubgetUserCart!:Subscription;
@@ -58,6 +60,22 @@ addTOCart(id:string){
        this._ToastrService.success(res.message," DIOR websit");
       },
      })
+}
+textlag(){
+    if (isPlatformBrowser(this._PLATFORM_ID)) {
+    if (localStorage.getItem("lang")!=null) {
+         if (localStorage.getItem("lang")=='en') {
+          return true;
+         }
+         else if (localStorage.getItem("lang")=='ar') {
+          return false;
+         }
+    } 
+    else if (localStorage.getItem("lang")==null) {
+                 return true;            
+        } 
+    }
+          return false
 }
 ngOnDestroy(): void {
     this.unsubgetUserCart.unsubscribe();
