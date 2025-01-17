@@ -117,6 +117,22 @@ this.elem.nativeElement.hidden=true
 clickedHeart(){
  this._HeartandcartService.clickedHeart();
 }
+// lightercomp
+ischeecked:boolean=false;
+theCurentImg:string='';  
+open(currentImg:string){
+     this.ischeecked=true;
+     this.theCurentImg= currentImg;
+}
+close(){
+    this.ischeecked=false;
+}
+@ViewChild('light') lightcomp!:ElementRef
+ligthfunc(e:Event){
+   if(e.target==this.lightcomp.nativeElement){
+    this.close()
+    }
+}
 ngOnDestroy(): void {
 this.unSubSpcificProduct?.unsubscribe();
 this.unSubadd?.unsubscribe();

@@ -3,9 +3,31 @@
     .thehide{
         display: none;
     }
+    .w-img-light{
+        width: 300px;
+        height: 300px;
+    }
 }
 @media (min-width: 576px) {
     .thehide{
         display: block !important;
     }
+    .w-img-light{
+        width: 50%;
+        height: 75%;
+    }
+}
+.width-button{
+    width: 100px;
+}
+.light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999999;
+    overflow: hidden !important;
+    
 }

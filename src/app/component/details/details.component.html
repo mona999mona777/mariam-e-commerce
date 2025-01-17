@@ -10,6 +10,7 @@
         detailsProduct.images.slice(0,3); track $index ) {
         <div class="mb-2">
           <img
+            (click)="open(theImage)"
             (click)="clicked(theImage)"
             class="w-100"
             src="{{ theImage }}"
@@ -20,6 +21,7 @@
         detailsProduct.images.slice(0,3); track $index ) {
         <div class="mb-2">
           <img
+            (click)="open(theImage)"
             (click)="clicked(theImage)"
             class="w-100"
             src="{{ theImage }}"
@@ -40,6 +42,7 @@
           @for (theImage of detailsProduct.images.slice(3); track $index ) {
           <div class="mb-2">
             <img
+              (click)="open(theImage)"
               (click)="clicked(theImage)"
               class="w-100"
               src="{{ theImage }}"
@@ -51,6 +54,7 @@
       </div>
       <div class="thehide col-sm-4">
         <img
+          (click)="open(detailsProduct.imageCover)"
           #swichImage
           class="w-100"
           height="250"
@@ -92,7 +96,7 @@
           <div
             #container
             id="{{ detailsProduct._id }}"
-            class="d-flex flex-nowrap align-items-center justify-content-between border-orange rounded-2 shadow-lg bg-white w-25 mx-auto shadow"
+            class="d-flex flex-nowrap align-items-center justify-content-between border-orange rounded-2 shadow-lg bg-white width-button mx-auto shadow"
           >
             <span class="d-block"
               ><i
@@ -117,3 +121,22 @@
   </div>
 </section>
 }
+<section>
+  @if (ischeecked==true) {
+  <div
+    #light
+    (click)="ligthfunc($event)"
+    class="light d-flex justify-content-center align-items-center"
+  >
+    <img
+      class="border-orange rounded-2 shadow-lg w-img-light"
+      [src]="theCurentImg"
+      alt="the portfolio image"
+    />
+  </div>
+  }
+</section>
+<!-- 
+ width="500px"
+      height="200px"
+       -->

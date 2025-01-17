@@ -16,6 +16,9 @@ body{
   --font-family:"Port Lligat Slab", serif;
   --rating-color: #ffc908;
 }
+.typed-cursor--blink{
+display: none !important;
+}
 @media (max-width: 992px) {
   .width-info{
     width: 90%;
@@ -169,7 +172,7 @@ a:hover {
   background-color: rgb(159, 149, 149);
 }
 .border-orange{
-  border: solid 1px rgb(212, 65, 7);
+  border: solid 2px rgb(212, 65, 7);
 }
 .btn-orange{
   background-color:white;
