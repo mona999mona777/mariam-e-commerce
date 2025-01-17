@@ -59,8 +59,10 @@
       [class.me-auto]="!textlag()"
       type="submit"
     >
-      {{ "login.login" | translate }} @if (isloading) {
-      <span class="fas fa-spin fa-spinner"></span>}
+      {{ "login.login" | translate }}
+      @if (isloading) {
+      <span class="fas fa-spin fa-spinner"></span>
+      }
     </button>
 
     <p class="text-center">
