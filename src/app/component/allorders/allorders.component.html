@@ -1,150 +1,155 @@
-<section class="container-fluid my-5 p-5">
+<section class="container my-5 py-5 overflow-hidden">
   <h2 class="text-main text-decoration-underline mt-5">
     {{ "orders.All Orders Info" | translate }}:
   </h2>
-  <div class="width-order mx-auto">
+  <div class="row">
     @for (order of alloreders; track order._id) {
-    <div
-      class="row align-items-center justify-content-center product bg-main-subtle my-3 shadow-lg"
-    >
-      @for (item of order.cartItems; track $index) {
-      @if(order.cartItems.length>1) {
+    <div class="col-lg-6 offset-lg-0">
       <div
-        [routerLink]="['/details', item.product.id]"
-        class="row py-2 border-bottom border-light"
+        class="row align-items-center justify-content-center product bg-main-subtle my-3 shadow-lg"
       >
-        <div class="col-2">
-          <div class="text-center">
-            <img
-              src="{{ item.product.imageCover }}"
-              class="rounded-2 border-orange width-image-order shadow-lg"
-              alt="{{ item.product.title }}"
-            />
-          </div>
-        </div>
-        <div class="col-10">
-          <div>
-            <p>
-              {{ "orders.productName" | translate }} : {{ item.product.title }}
-            </p>
-            <p>{{ "orders.count" | translate }} : {{ item.count }}</p>
-            <p>
-              {{ "orders.price" | translate }} : {{ item.price }}
-              {{ "cart.EGP" | translate }}
-            </p>
-          </div>
-        </div>
-      </div>
-      } @if (order.cartItems.length==1) {
-      <div [routerLink]="['/details', item.product.id]" class="row py-2">
-        <div class="col-2">
-          <div class="text-center">
-            <img
-              src="{{ item.product.imageCover }}"
-              class="rounded-2 border-orange width-image-order shadow-lg"
-              alt="{{ item.product.title }}"
-            />
-          </div>
-        </div>
-        <div class="col-10">
-          <div>
-            <p>
-              {{ "orders.productName" | translate }} : {{ item.product.title }}
-            </p>
-            <p>{{ "orders.count" | translate }} : {{ item.count }}</p>
-            <p>
-              {{ "orders.price" | translate }} : {{ item.price }}
-              {{ "cart.EGP" | translate }}
-            </p>
-          </div>
-        </div>
-      </div>
-      } }
-      <div class="row bg-light pt-1">
-        <div class="col-md-6">
-          <div>
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.User Email" | translate }}:</span
-              >
-              {{ order.user.email }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.User order phone" | translate }}:</span
-              >
-              {{ order.shippingAddress.phone }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.User city" | translate }}:</span
-              >
-              {{ order.shippingAddress.city }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.order date" | translate }}:</span
-              >
-              {{ order.paidAt | date }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.total price" | translate }} :</span
-              >
-              {{ order.totalOrderPrice }}</P
-            >
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div>
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.payment status" | translate }}:</span
-              >
-              {{ order.isPaid }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.Is Delivered" | translate }}:</span
-              >
-              {{ order.isDelivered }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.Order Id" | translate }}:</span
-              >
-              {{ order.id }}</P
-            >
-            <P
-              ><span class="text-orange-emphasis"
-                >{{ "orders.Payment Method" | translate }} :</span
-              >
-              {{ order.paymentMethodType }}</P
-            >
-            <div
-              [class.ms-auto]="textlag()"
-              [class.me-auto]="!textlag()"
-              class="w-25"
-            >
+        @for (item of order.cartItems; track $index) {
+        @if(order.cartItems.length>1) {
+        <div
+          [routerLink]="['/details', item.product.id]"
+          class="row py-2 border-bottom border-light"
+        >
+          <div class="col-4">
+            <div>
               <img
-                src="./assets/images/signature.png"
-                class="rounded-2 w-100"
-                alt=" signature image"
+                src="{{ item.product.imageCover }}"
+                class="rounded-2 border-orange width-image-order shadow-lg"
+                alt="{{ item.product.title }}"
               />
             </div>
-            <p
-              [class.ms-auto]="textlag()"
-              [class.me-auto]="!textlag()"
-              class="w-25 text-center"
-            >
-              <b class="logo text-orange small d-block me-auto">
-                {{ "navbar.Shopping" | translate }}</b
+          </div>
+          <div class="col-8">
+            <div>
+              <p>
+                {{ "orders.productName" | translate }} :
+                {{ item.product.title }}
+              </p>
+              <p>{{ "orders.count" | translate }} : {{ item.count }}</p>
+              <p>
+                {{ "orders.price" | translate }} : {{ item.price }}
+                {{ "cart.EGP" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        } @if (order.cartItems.length==1) {
+        <div [routerLink]="['/details', item.product.id]" class="row py-2">
+          <div class="col-4">
+            <div>
+              <img
+                src="{{ item.product.imageCover }}"
+                class="rounded-2 border-orange width-image-order shadow-lg"
+                alt="{{ item.product.title }}"
+              />
+            </div>
+          </div>
+          <div class="col-8">
+            <div>
+              <p>
+                {{ "orders.productName" | translate }} :
+                {{ item.product.title }}
+              </p>
+              <p>{{ "orders.count" | translate }} : {{ item.count }}</p>
+              <p>
+                {{ "orders.price" | translate }} : {{ item.price }}
+                {{ "cart.EGP" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        } }
+        <div class="row bg-light pt-1">
+          <div class="col-md-6">
+            <div>
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.User Email" | translate }}:</span
+                >
+                {{ order.user.email }}</P
               >
-            </p>
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.User order phone" | translate }}:</span
+                >
+                {{ order.shippingAddress.phone }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.User city" | translate }}:</span
+                >
+                {{ order.shippingAddress.city }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.order date" | translate }}:</span
+                >
+                {{ order.paidAt | date }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.total price" | translate }} :</span
+                >
+                {{ order.totalOrderPrice }}</P
+              >
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.payment status" | translate }}:</span
+                >
+                {{ order.isPaid }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.Is Delivered" | translate }}:</span
+                >
+                {{ order.isDelivered }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.Order Id" | translate }}:</span
+                >
+                {{ order.id }}</P
+              >
+              <P
+                ><span class="text-orange-emphasis"
+                  >{{ "orders.Payment Method" | translate }} :</span
+                >
+                {{ order.paymentMethodType }}</P
+              >
+              <div
+                [class.ms-auto]="textlag()"
+                [class.me-auto]="!textlag()"
+                class="w-25"
+              >
+                <img
+                  src="./assets/images/signature.png"
+                  class="rounded-2 w-100"
+                  alt=" signature image"
+                />
+              </div>
+              <p
+                [class.ms-auto]="textlag()"
+                [class.me-auto]="!textlag()"
+                class="w-25 text-center"
+              >
+                <b class="logo text-orange small d-block me-auto">
+                  {{ "navbar.Shopping" | translate }}</b
+                >
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     }
   </div>
 </section>

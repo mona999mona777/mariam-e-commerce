@@ -1,15 +1,23 @@
-@media (max-width: 576px) {
-    .width-order{
-      width: 95%;
-    }
+@media (max-width: 300px) {
+  .width-image-order{
+    width: 60px;
+  }
+}
+
+@media (min-width: 300px) {
     .width-image-order{
-      width: 50px;
+      width: 80px;
     }
   }
   @media (min-width: 576px) {
     .width-order{
       width: 75%;
     }
+    .width-image-order{
+      width: 100px;
+        }
+  }
+  @media (min-width: 992px) {
     .width-image-order{
       width: 100px;
         }
